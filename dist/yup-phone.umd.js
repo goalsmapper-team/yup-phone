@@ -128,7 +128,10 @@
 	      // if not valid countryCode, then set default country to India (IN)
 	      countryCode = 'IN';
 	      strict = false;
-	    }
+	    } // This is what .required() is for
+
+
+	    if (value === undefined || value === '') return true;
 
 	    try {
 	      var phoneNumber = phoneUtil.parseAndKeepRawInput(value, countryCode);
